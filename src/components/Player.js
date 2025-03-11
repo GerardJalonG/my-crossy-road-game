@@ -1,5 +1,4 @@
 import * as THREE from "three";
-import { color } from "three/tsl";
 
 export const player = Player();
 
