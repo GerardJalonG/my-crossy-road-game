@@ -7,7 +7,6 @@ const clock = new THREE.Clock();
 export function animateVehicles() {
   const delta = clock.getDelta();
 
-  // Animate cars and trucks
   rows.forEach((rowData) => {
     if (rowData.type === "car" || rowData.type === "truck") {
       const beginningOfRow = (minTileIndex - 2) * tileSize;
