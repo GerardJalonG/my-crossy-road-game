@@ -3,13 +3,14 @@ import { Grass } from "./Grass";
 import { Tree } from "./Tree";
 import { Road } from "./Road";
 import { Car } from "./Car";
+import { Truck } from "./Truck";
 
 export const metadata = [
     {
-        type: "car",
-        direction: false,
-        speed: 1,
-        vehicles: [{ initialTileIndex: 2, color: 0xff0000 }],
+        type: "truck",
+        direction: true,
+        speed: 0,
+        vehicles: [{ initialTileIndex: -4, color: 0x00ff00 }],
         },
 ];
 
@@ -49,6 +50,21 @@ export function addRows() {
             });
       
             map.add(row);
-          }
+        }
+
+        if (rowData.type === "truck") {
+            const row = Road(rowIndex);
+      
+            rowData.vehicles.forEach((vehicle) => {
+              const truck = Truck(
+                vehicle.initialTileIndex,
+                rowData.direction,
+                vehicle.color
+              );
+              row.add(truck);
+            });
+      
+            map.add(row);
+        }
     });
 }
