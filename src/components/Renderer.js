@@ -12,6 +12,7 @@ export function Renderer() {
     });
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.shadowMap.enabled = true;
     
     return renderer;
 }
